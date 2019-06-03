@@ -12,7 +12,7 @@ const forecast = (latitude, longitude, callback) => {
             const tempDegrees = (body.currently.temperature - 32) * 5/9 ;
             const lowTemp = (body.daily.data[0].temperatureLow - 32 ) * 5/9;
             const highTemp = (body.daily.data[0].temperatureHigh -32 ) * 5/9;
-            callback(undefined, body.daily.data[0].summary + ' It is currently ' + tempDegrees + ' degress out. This high today is '+ highTemp + 'with low of '+ +'There is a ' + lowTemp + '% chance of rain.')
+            callback(undefined, body.daily.data[0].summary + ' It is currently ' + tempDegrees + ' degress out. This high today is ' + highTemp + 'with low of ' + lowTemp + ' There is a ' + body.currently.precipProbability + '% chance of rain.')
         }
     })
 }
